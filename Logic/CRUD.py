@@ -38,7 +38,7 @@ def read(lst_cheltuieli, id_cheltuiala: int = None):
     return None
 
 
-def read_by_nr_apartament(lst_cheltuieli, nr_apartament, undo_list: list, redo_list: list):
+def read_by_nr_apartament(lst_cheltuieli, nr_apartament):
     """
     Citeste o cheltuiala din "baza de date" dupa numarul apartamentului.
     :param lst_cheltuieli: Lista de cheltuieli.
@@ -48,8 +48,6 @@ def read_by_nr_apartament(lst_cheltuieli, nr_apartament, undo_list: list, redo_l
     for cheltuiala in lst_cheltuieli:
         if get_nr_apartament(cheltuiala) == nr_apartament:
             return cheltuiala
-    undo_list.append(lst_cheltuieli)
-    redo_list.clear()
     return None
 
 
