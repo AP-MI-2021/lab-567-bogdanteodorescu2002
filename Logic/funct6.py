@@ -1,4 +1,4 @@
-def undo(undo_list: list, redo_list: list, current_list: list):
+def do_undo(undo_list: list, redo_list: list, current_list: list):
     """
     Returneaza lista in urma apelarii unui Undo
     :param undo_list: Lista de liste de cheltuieli, modificata in urma apelarii fiecarei functionalitati
@@ -12,7 +12,7 @@ def undo(undo_list: list, redo_list: list, current_list: list):
     return None
 
 
-def redo(undo_list: list, redo_list: list, current_list: list):
+def do_redo(undo_list: list, redo_list: list, current_list: list):
     """
     Returneaza lista in urma apelarii unui Redo
     :param undo_list: Lista de liste de cheltuieli, modificata in urma apelarii fiecarei functionalitati
