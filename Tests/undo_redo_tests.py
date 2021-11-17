@@ -216,11 +216,11 @@ def test_undo_redo():
     assert get_suma(read(lst_cheltuieli, 105)) == 22
 
     lst_cheltuieli = do_undo(undo_list, redo_list, lst_cheltuieli)
-    assert get_suma(read(lst_cheltuieli, 313)) == 800
-    assert get_suma(read(lst_cheltuieli, 314)) == 111
-    assert get_suma(read(lst_cheltuieli, 315)) == 22
+    assert get_suma(read(lst_cheltuieli, 103)) == 800
+    assert get_suma(read(lst_cheltuieli, 104)) == 111
+    assert get_suma(read(lst_cheltuieli, 105)) == 22
 
     lst_cheltuieli = do_redo(undo_list, redo_list, lst_cheltuieli)
-    assert get_suma(read(lst_cheltuieli, 313)) == 900
-    assert get_suma(read(lst_cheltuieli, 314)) == 111
-    assert get_suma(read(lst_cheltuieli, 315)) == 22
+    assert get_suma(read(lst_cheltuieli, 103)) == 900
+    assert get_suma(read(lst_cheltuieli, 104)) == 111
+    assert get_suma(read(lst_cheltuieli, 105)) == 22
