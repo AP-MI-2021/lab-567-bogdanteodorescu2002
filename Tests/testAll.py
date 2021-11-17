@@ -15,4 +15,5 @@ def runAllTests():
     test_add_sum_to_date()
     test_the_biggest_expense_for_every_type()
     test_ordering_expenses_descending_by_amount()
+    test_undo_redo()
     
