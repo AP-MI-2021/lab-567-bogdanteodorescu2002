@@ -1,7 +1,9 @@
 import datetime
 
 from Domain.cheltuiala import get_str
-from Logic.CRUD import delete, create
+from Logic.CRUD import delete, create, update, read_by_nr_apartament
+from Logic.funct1 import delete_all_costs_for_apartement
+from Logic.funct3 import the_biggest_expense_for_every_type
 
 
 def read_data(data_str):
@@ -50,5 +52,31 @@ def run_console(lst_cheltuieli):
                     lst_cheltuieli = delete(lst_cheltuieli, id_cheltuiala, [], [])
                 else:
                     print('Nu ati introdus numarul cirect de parametri pentru stergere!')
+            elif command[0] == 'update':
+                if len(command) == 6:
+                    try:
+                        id_cheltuiala = command[1]
+                        nr_apartament = command[2]
+                        suma = command[3]
+                        data = command[4]
+                        if data is None:
+                            raise ValueError('Nu ati introdus corect data! ')
+                        tipul = command[5]
+                        lst_cheltuieli = update(lst_cheltuieli, id_cheltuiala, nr_apartament, suma, data, tipul, [], [])
+                    except ValueError as ve:
+                        print(f'Eroare: {ve}')
+                else:
+                    print('Nu ati introdus numarul corect de parametrii ai cheltuielii.')
+            elif command[0] == 'delete all costs':
+                if len(command) == 2:
+                    try:
+                        nr_apartament = [1]
+                        lst_cheltuieli = delete_all_costs_for_apartement(lst_cheltuieli, nr_apartament, [], [])
+                    except ValueError as ve:
+                        print(f'Eroare: {ve}')
+                else:
+                    print('Nu ati introdus numarul corect de parametrii ai cheltuielii.')
+            elif command[0] == 'biggest expense':
+                lst_cheltuieli = the_biggest_expense_for_every_type(lst_cheltuieli)
             else:
                 print('Comanda incorecta, incercati din nou!')
