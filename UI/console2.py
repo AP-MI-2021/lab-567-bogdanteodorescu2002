@@ -52,7 +52,7 @@ def run_console(lst_cheltuieli):
                     lst_cheltuieli = delete(lst_cheltuieli, id_cheltuiala, [], [])
                 else:
                     print('Nu ati introdus numarul cirect de parametri pentru stergere!')
-            elif command[0] == 'read by nr apartment':
+            elif command[0] == 'read_by_nr_apartment':
                 if len(command) == 2:
                     try:
                         nr_apartament = command[1]
@@ -76,7 +76,7 @@ def run_console(lst_cheltuieli):
                         print(f'Eroare: {ve}')
                 else:
                     print('Nu ati introdus numarul corect de parametrii ai cheltuielii.')
-            elif command[0] == 'delete all costs':
+            elif command[0] == 'delete_all_costs':
                 if len(command) == 2:
                     try:
                         nr_apartament = command[1]
@@ -85,7 +85,7 @@ def run_console(lst_cheltuieli):
                         print(f'Eroare: {ve}')
                 else:
                     print('Nu ati introdus numarul corect de parametrii ai cheltuielii.')
-            elif command[0] == 'biggest expense':
+            elif command[0] == 'biggest_expense':
                 if len(command) == 1:
                     try:
                         lst_cheltuieli = the_biggest_expense_for_every_type(lst_cheltuieli)
